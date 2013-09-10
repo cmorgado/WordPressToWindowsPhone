@@ -1,0 +1,113 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WP_to_WP.WP8.UI.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP8"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    xmlns:cimbalinoBehaviors="clr-namespace:Cimbalino.Phone.Toolkit.Behaviors;assembly=Cimbalino.Phone.Toolkit"
+
+    toolkit:TiltEffect.IsTiltEnabled="True"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0"
+    DataContext="{Binding About, Mode=OneWay, Source={StaticResource Locator}}" 
+    >
+
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource MainBackgroundBrush}">
+        <!--Pivot Control-->
+        <phone:Pivot Title="{Binding ApplicationName}" HeaderTemplate="{StaticResource PivotHeader}" >
+            <!--Pivot item one-->
+            <phone:PivotItem Header="quem é o xá">
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap" Text="Autor" Foreground="{StaticResource ThirdBackgroundBrush}"/>
+                    <Grid Margin="0,0,0,12" >
+                        <TextBlock TextWrapping="Wrap" Text="João Gata" Foreground="{StaticResource SecondaryBackgroundBrush}"  HorizontalAlignment="Left"/>
+                        <HyperlinkButton Content="joaogata@WP_to_WP.com" 
+                                         HorizontalAlignment="Right" 
+                                       
+                                         Foreground="{StaticResource PhoneAccentBrush}" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <cmd:EventToCommand Command="{Binding SendEmail, Mode=OneWay}" CommandParameterValue="joaogata@WP_to_WP.com"   />
+
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                    </Grid>
+                    <TextBlock TextWrapping="Wrap" Text="apoio técnico" Foreground="{StaticResource ThirdBackgroundBrush}"/>
+                    <Grid Margin="0,0,0,12" >
+                        <TextBlock TextWrapping="Wrap" Text="Fernando Correia" Foreground="{StaticResource SecondaryBackgroundBrush}"  HorizontalAlignment="Left"/>
+                        <HyperlinkButton Content="fcorreia@WP_to_WP.com" HorizontalAlignment="Right" Foreground="{StaticResource PhoneAccentBrush}" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <cmd:EventToCommand Command="{Binding SendEmail, Mode=OneWay}" CommandParameterValue="jfcorreia@WP_to_WP.com"   />
+
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                    </Grid>
+                    <TextBlock TextWrapping="Wrap" Text="publicidade" Foreground="{StaticResource ThirdBackgroundBrush}"/>
+                    <Grid Margin="0,0,0,12" >
+                        <TextBlock TextWrapping="Wrap" Text="Ana Pinto Coelho" Foreground="{StaticResource SecondaryBackgroundBrush}"  HorizontalAlignment="Left"/>
+                        <HyperlinkButton Content="apcoelho@WP_to_WP.com" HorizontalAlignment="Right" Foreground="{StaticResource PhoneAccentBrush}" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <cmd:EventToCommand Command="{Binding SendEmail, Mode=OneWay}" CommandParameterValue="apcoelho@WP_to_WP.com"   />
+
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                    </Grid>
+                    <TextBlock TextWrapping="Wrap" Text="conteúdos" Foreground="{StaticResource ThirdBackgroundBrush}"/>
+                    <Grid Margin="0,0,0,12" >
+                        <TextBlock TextWrapping="Wrap" Text="Ricardo Teigas Jacob" Foreground="{StaticResource SecondaryBackgroundBrush}"  HorizontalAlignment="Left"/>
+                        <!--<HyperlinkButton Content="joaogata@WP_to_WP.com" HorizontalAlignment="Right" Foreground="{StaticResource PhoneAccentBrush}" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <cmd:EventToCommand Command="{Binding SendEmail, Mode=OneWay}" CommandParameterValue="joaogata@WP_to_WP.com"   />
+
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>-->
+                    </Grid>
+                </StackPanel>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="{Binding Translation.TheApp, Source={StaticResource LabelsManager}}">
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Translation.Version, Source={StaticResource LabelsManager}}" Foreground="{StaticResource ThirdBackgroundBrush}"/>
+                    <Grid Margin="0,0,0,12" >
+                        <TextBlock TextWrapping="Wrap" Text="{Binding AppVersion, Mode=OneWay}" Foreground="{StaticResource SecondaryBackgroundBrush}"  HorizontalAlignment="Left"/>
+                    </Grid>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Translation.CreatedBy, Source={StaticResource LabelsManager}}" Foreground="{StaticResource ThirdBackgroundBrush}"/>
+                    <Grid Margin="0,0,0,12" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock TextWrapping="Wrap" Text="Cristovão Morgado" Foreground="{StaticResource SecondaryBackgroundBrush}"  HorizontalAlignment="Left"/>
+                        <HyperlinkButton Grid.Row="1" Content="cristovao.morgado@gmail.com" HorizontalAlignment="Right" Foreground="{StaticResource PhoneAccentBrush}" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <cmd:EventToCommand Command="{Binding SendEmail, Mode=OneWay}" CommandParameterValue="cristovao.morgado@gmail.com"   />
+
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                    </Grid>
+                </StackPanel>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>

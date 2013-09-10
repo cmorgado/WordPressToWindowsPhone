@@ -1,0 +1,117 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WP_to_WP.WP7x.UI.PostPivot"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"   
+    xmlns:delay="clr-namespace:Delay;assembly=PhonePerformance"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:wbp="clr-namespace:WP_to_WP.UI"
+    xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP71"
+    xmlns:cimbalinoBehaviors="clr-namespace:Cimbalino.Phone.Toolkit.Behaviors;assembly=Cimbalino.Phone.Toolkit"
+    xmlns:telerikSlideView="clr-namespace:Telerik.Windows.Controls.SlideView;assembly=Telerik.Windows.Controls.Primitives"
+   
+    mc:Ignorable="d"
+    
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    DataContext="{Binding Post, Mode=OneWay, Source={StaticResource Locator}}" 
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <cmd:EventToCommand Command="{Binding LoadPost, Mode=OneWay}"   />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="{StaticResource MainBackgroundBrush}">
+
+        <i:Interaction.Behaviors>
+            <cimbalinoBehaviors:MultiApplicationBarBehavior SelectedIndex="0" >
+                <cimbalinoBehaviors:ApplicationBar Opacity="0.5">
+                    <cimbalinoBehaviors:ApplicationBarIconButton Command="{Binding OpenIe, Mode=OneTime}" 
+                                                                 IconUri="/Assets/appbar.ie.png" Text="ie" />
+                    <cimbalinoBehaviors:ApplicationBarIconButton Command="{Binding ShareSocial, Mode=OneTime}" 
+                                                                 IconUri="/Assets/appbar.share.rest.png" Text="{Binding Translation.Share, Source={StaticResource LabelsManager}}" />
+                </cimbalinoBehaviors:ApplicationBar>
+
+            </cimbalinoBehaviors:MultiApplicationBarBehavior>
+        </i:Interaction.Behaviors>
+
+        <Grid x:Name="LayoutRoot" >
+            <Grid.Background>
+                <ImageBrush ImageSource="{Binding BigImage}" Opacity="0.1" Stretch="UniformToFill" ></ImageBrush>
+            </Grid.Background>
+
+            <controls:Pivot Title="{Binding ApplicationName}" HeaderTemplate="{StaticResource PivotHeader}" Background="Transparent">
+
+
+                <controls:PivotItem Header="{Binding ShortTitle}">
+
+                    <ScrollViewer>
+                        <StackPanel >
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="160"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Margin="12,0,0,0" x:Name="ShowImage" Stretch="UniformToFill" Height="150" Width="150" 
+                        				delay:LowProfileImageLoader.UriSource="{Binding Url}"
+                        				HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                <StackPanel Grid.Column="1" >
+                                    <TextBlock VerticalAlignment="Bottom" Text="{Binding Title}" 
+                        					TextWrapping="Wrap"  
+                        					Style="{StaticResource PhoneTextTitle2Style}" 
+                        					Foreground="{StaticResource ThirdBackgroundBrush}"
+                                               />
+                                    <TextBlock VerticalAlignment="Bottom" Text="{Binding Date}" 
+                        					TextWrapping="Wrap"  
+                        					Style="{StaticResource PhoneTextTitle3Style}" 
+                        					Foreground="{StaticResource SecondaryBackgroundBrush}"
+                                               />
+                                    <TextBlock VerticalAlignment="Bottom" Text="{Binding Author.Name}" 
+                        					TextWrapping="Wrap"  
+                        					Style="{StaticResource PhoneTextTitle3Style}" 
+                        					Foreground="{StaticResource SecondaryBackgroundBrush}"
+                                               />
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap" 
+                                   Style="{StaticResource PhoneTextNormalStyle}" 
+                                   Foreground="{StaticResource ThirdBackgroundBrush}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </controls:PivotItem>
+
+                <!--Pivot item two-->
+                <controls:PivotItem Header="{Binding Translation.Photos, Source={StaticResource LabelsManager}}">
+                    <ListBox Margin="0" 
+                    ItemsSource="{Binding Photos}" 
+                    x:Name="PhotoGrid" >
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <toolkit:WrapPanel ItemHeight="200" ItemWidth="200"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="1">
+                                    <telerikSlideView:PanAndZoomImage  VerticalAlignment="Top" Margin="0,6,0,0"  
+                                      Width="200" Height="200" Source="{Binding Url}" Stretch="UniformToFill" ZoomMode="None"/>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </controls:PivotItem>
+
+            </controls:Pivot>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

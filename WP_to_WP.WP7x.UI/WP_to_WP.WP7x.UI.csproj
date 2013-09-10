@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4ACAE786-4D6A-499D-8800-5329DCFF48C6}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WP_to_WP.WP7x.UI</RootNamespace>
+    <AssemblyName>WP_to_WP.WP7x.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>pt-PT</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>WP_to_WP.WP7x.UI.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>WP_to_WP.WP7x.UI.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cimbalino.Phone.Toolkit">
+      <HintPath>..\packages\Cimbalino.Phone.Toolkit.3.1.0\lib\sl4-wp71\Cimbalino.Phone.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Cimbalino.Phone.Toolkit.Background">
+      <HintPath>..\packages\Cimbalino.Phone.Toolkit.Background.3.1.0\lib\sl4-wp71\Cimbalino.Phone.Toolkit.Background.dll</HintPath>
+    </Reference>
+    <Reference Include="Cimbalino.Phone.Toolkit.DeviceInfo">
+      <HintPath>..\packages\Cimbalino.Phone.Toolkit.DeviceInfo.3.1.0\lib\sl4-wp71\Cimbalino.Phone.Toolkit.DeviceInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Toolkit.Audio">
+      <HintPath>..\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\wp71\Coding4Fun.Toolkit.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Toolkit.Controls">
+      <HintPath>..\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\wp71\Coding4Fun.Toolkit.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Toolkit.Net">
+      <HintPath>..\packages\Coding4Fun.Toolkit.Net.2.0.7\lib\wp71\Coding4Fun.Toolkit.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Toolkit.Storage">
+      <HintPath>..\packages\Coding4Fun.Toolkit.Storage.2.0.7\lib\wp71\Coding4Fun.Toolkit.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WP71">
+      <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\sl4-wp71\GalaSoft.MvvmLight.Extras.WP71.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WP71">
+      <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\sl4-wp71\GalaSoft.MvvmLight.WP71.dll</HintPath>
+    </Reference>
+    <Reference Include="JeffWilcox.PhoneThemeManager">
+      <HintPath>..\packages\PhoneThemeManager.1.5\lib\sl4-windowsphone71\JeffWilcox.PhoneThemeManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\sl4-wp71\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.GamerServices" />
+    <Reference Include="PhonePerformance">
+      <HintPath>..\packages\PhonePerformance.1.2.1\lib\sl4-windowsphone71\PhonePerformance.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=1.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks, Version=1.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\sl4-wp71\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2013.2.718.2040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWP\2013.2.718.2040\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Primitives, Version=2013.2.718.2040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWP\2013.2.718.2040\Telerik.Windows.Controls.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Core, Version=2013.2.718.2040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWP\2013.2.718.2040\Telerik.Windows.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\WP_to_WP.WP8.UI\ViewModel\ViewModelLocator.cs">
+      <Link>ViewModel\ViewModelLocator.cs</Link>
+    </Compile>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PostPivot.xaml.cs">
+      <DependentUpon>PostPivot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Posts.xaml.cs">
+      <DependentUpon>Posts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\appbar.feature.settings.rest.png">
+      <Link>Assets\appbar.feature.settings.rest.png</Link>
+    </Content>
+    <Content Include="Assets\Config\Configuration.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\appbar.ie.png">
+      <Link>Assets\appbar.ie.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\appbar.refresh.rest.png">
+      <Link>Assets\appbar.refresh.rest.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\appbar.share.rest.png">
+      <Link>Assets\appbar.share.rest.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\ApplicationIcon_100_100.png">
+      <Link>Assets\ApplicationIcon_100_100.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\ApplicationIcon_62_62.png">
+      <Link>Assets\ApplicationIcon_62_62.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\Background_173_173.png">
+      <Link>Assets\Background_173_173.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\FlipCycleTileSmall_159_159.png">
+      <Link>Assets\FlipCycleTileSmall_159_159.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\FlipCycleTitleLarge_691_336.png">
+      <Link>Assets\FlipCycleTitleLarge_691_336.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\FlipCycleTitleMedium_336_336.png">
+      <Link>Assets\FlipCycleTitleMedium_336_336.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\info.png">
+      <Link>Assets\info.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\SplashScreenImage-720p.png">
+      <Link>Assets\SplashScreenImage-720p.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\SplashScreenImage-WVGA.png">
+      <Link>Assets\SplashScreenImage-WVGA.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\SplashScreenImage-WXGA.png">
+      <Link>Assets\SplashScreenImage-WXGA.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\StoreIcon_300_300.png">
+      <Link>Assets\StoreIcon_300_300.png</Link>
+    </Content>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\TopPanoramaLogo.png">
+      <Link>Assets\TopPanoramaLogo.png</Link>
+    </Content>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ApplicationIcon_62_62.png" />
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background_173_173.png" />
+    <Content Include="Properties\SplashScreen.jpg" />
+    <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="SplashScreenImage.jpg" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Content Include="..\WP_to_WP.WP8.UI\Assets\GlobalResources.xaml">
+      <Link>Assets\GlobalResources.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Content Include="Assets\LocalResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Page Include="Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PostPivot.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Posts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WP_to_WP.Domain\WP_to_WP.Domain.csproj">
+      <Project>{FA53AA32-BCF7-42CF-B281-92F19F21B2B1}</Project>
+      <Name>WP_to_WP.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WP_to_WP.International\WP_to_WP.International.csproj">
+      <Project>{29A53162-34E6-4225-9B8D-FCB417AAF5B9}</Project>
+      <Name>WP_to_WP.International</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WP_to_WP.WP7x.Agent\WP_to_WP.WP7x.Agent.csproj">
+      <Project>{6B995F70-3C4B-44B7-9AFA-C96ECBE7169F}</Project>
+      <Name>WP_to_WP.WP7x.Agent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WP_to_WP.WP7x.Shared\WP_to_WP.WP7x.Shared.csproj">
+      <Project>{44114446-B8C5-4C3A-903D-529A408A358F}</Project>
+      <Name>WP_to_WP.WP7x.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Code\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

@@ -1,0 +1,101 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WP_to_WP.WP8.UI.Posts"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP71"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"   
+    xmlns:delay="clr-namespace:Delay;assembly=PhonePerformance"
+    xmlns:cimbalinoBehaviors="clr-namespace:Cimbalino.Phone.Toolkit.Behaviors;assembly=Cimbalino.Phone.Toolkit"
+                         
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0"
+    DataContext="{Binding Posts, Mode=OneWay, Source={StaticResource Locator}}" 
+    >
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <cmd:EventToCommand Command="{Binding Load, Mode=OneWay}"   />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource MainBackgroundBrush}">
+
+    
+
+        <controls:Pivot Title="{Binding ApplicationName}" HeaderTemplate="{StaticResource PivotHeader}">
+
+
+            <controls:PivotItem Header="{Binding Title}">
+                <ListBox  
+                             Margin="0,0,-12,0" 
+                             ItemsSource="{Binding Items}" 
+                             SelectedItem="{Binding SelectedPost, Mode=TwoWay}"
+                             ItemTemplate="{StaticResource NewsItems}"
+                           >
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <cmd:EventToCommand Command="{Binding GoToPost, Mode=OneWay}"   />
+
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                </ListBox>
+
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="{Binding Translation.Categories, Source={StaticResource LabelsManager}}">
+                <ListBox  toolkit:TiltEffect.IsTiltEnabled="True"
+                             x:Name="RecentList" 
+                             Margin="0,0,-12,0" 
+                             ItemsSource="{Binding Categories}" 
+                             SelectedItem="{Binding SelectedCategory, Mode=TwoWay}"
+                           >
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <cmd:EventToCommand Command="{Binding GoToCategory, Mode=OneWay}"   />
+
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+
+
+                            <TextBlock Text="{Binding Title}" TextWrapping="Wrap"  
+                                       Style="{StaticResource PhoneTextTitle2Style}" 
+                                       Foreground="{StaticResource SecondaryBackgroundBrush}"
+                                       Margin="12,0,12,12"
+                                       />
+
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+        </controls:Pivot>
+
+        <toolkit:PerformanceProgressBar
+			VerticalAlignment="Top"
+			IsIndeterminate="{Binding IsLoading}" 
+			Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" 
+			Foreground="{StaticResource ThirdBackgroundBrush}"
+			x:Name="_performanceProgressBar" />
+    </Grid>
+
+</phone:PhoneApplicationPage>
