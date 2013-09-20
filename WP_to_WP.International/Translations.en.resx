@@ -132,6 +132,9 @@
   <data name="Diagnostics_MessageBox_Title" xml:space="preserve">
     <value>an error as occured</value>
   </data>
+  <data name="ErrorLoadingPosts" xml:space="preserve">
+    <value>an error as ocurred loading data</value>
+  </data>
   <data name="Highlights" xml:space="preserve">
     <value>highlights</value>
   </data>

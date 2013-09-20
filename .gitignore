@@ -43,7 +43,7 @@ local.properties
 *.key
 
 # Build results
-
+[Ll]ib/
 [Dd]ebug/
 [Rr]elease/
 x64/

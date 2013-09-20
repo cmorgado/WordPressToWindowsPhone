@@ -13,48 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WP_to_WP.WP7x.Agent", "WP_t
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WP_to_WP.International", "WP_to_WP.International\WP_to_WP.International.csproj", "{29A53162-34E6-4225-9B8D-FCB417AAF5B9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A8A048AB-8822-453D-B7DA-09B3F2E2C21D}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WP_to_WP.WP8.Shared", "WP_to_WP.WP8.Shared\WP_to_WP.WP8.Shared.csproj", "{51DC8531-1EC7-45DE-A760-82F1921DCADA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WP_to_WP.WP7x.Shared", "WP_to_WP.WP7x.Shared\WP_to_WP.WP7x.Shared.csproj", "{44114446-B8C5-4C3A-903D-529A408A358F}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 9
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://ideiasemmovimento.tfspreview.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = WP_to_WP.Domain\\WP_to_WP.Domain.csproj
-		SccProjectName1 = WP_to_WP.Domain
-		SccLocalPath1 = WP_to_WP.Domain
-		SccProjectUniqueName2 = WP_to_WP.WP8.UI\\WP_to_WP.WP8.UI.csproj
-		SccProjectName2 = WP_to_WP.WP8.UI
-		SccLocalPath2 = WP_to_WP.WP8.UI
-		SccProjectUniqueName3 = WP_to_WP.WP7x.UI\\WP_to_WP.WP7x.UI.csproj
-		SccProjectName3 = WP_to_WP.WP7x.UI
-		SccLocalPath3 = WP_to_WP.WP7x.UI
-		SccProjectUniqueName4 = WP_to_WP.WP8.Agent\\WP_to_WP.WP8.Agent.csproj
-		SccProjectName4 = WP_to_WP.WP8.Agent
-		SccLocalPath4 = WP_to_WP.WP8.Agent
-		SccProjectUniqueName5 = WP_to_WP.WP7x.Agent\\WP_to_WP.WP7x.Agent.csproj
-		SccProjectName5 = WP_to_WP.WP7x.Agent
-		SccLocalPath5 = WP_to_WP.WP7x.Agent
-		SccProjectUniqueName6 = WP_to_WP.International\\WP_to_WP.International.csproj
-		SccProjectName6 = WP_to_WP.International
-		SccLocalPath6 = WP_to_WP.International
-		SccProjectUniqueName7 = WP_to_WP.WP8.Shared\\WP_to_WP.WP8.Shared.csproj
-		SccProjectName7 = WP_to_WP.WP8.Shared
-		SccLocalPath7 = WP_to_WP.WP8.Shared
-		SccProjectUniqueName8 = WP_to_WP.WP7x.Shared\\WP_to_WP.WP7x.Shared.csproj
-		SccProjectName8 = WP_to_WP.WP7x.Shared
-		SccLocalPath8 = WP_to_WP.WP7x.Shared
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM

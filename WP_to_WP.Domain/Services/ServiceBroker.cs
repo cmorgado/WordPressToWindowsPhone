@@ -54,23 +54,11 @@ namespace WP_to_WP.Domain.Services
             HttpResponseMessage response = await client.GetAsync(Url.ToString());
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
+            Debug.WriteLine(content);
+            return JsonConvert.DeserializeObject<T>(content);
 
 
-            return await Task.Factory.StartNew(() =>
-            {
 
-                try
-                {
-                    Debug.WriteLine(content);
-                    return JsonConvert.DeserializeObject<T>(content);
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-
-            });
         }
     }
 }

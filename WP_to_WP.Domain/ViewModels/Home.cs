@@ -221,14 +221,7 @@ namespace WP_to_WP.Domain.ViewModels
 
                             LoadingCounter++;
 
-                            /*
-                          
-   WP_to_WP.Domain.Services.AgentService AgentTesting = new Services.AgentService(_storageService,  _settingsService);
-                            var r = await AgentTesting.GetUpdates("112", _storageService);
-                      
-                            */
-
-                            _uxService.CreateLiveTile("");
+                                                  
 
                             if (this.Categories.Count == 0)
                             {
@@ -247,6 +240,7 @@ namespace WP_to_WP.Domain.ViewModels
                                 catch (Exception ex)
                                 {
 
+                                    _uxService.ShowAlert(International.Translations.ErrorLoadingPosts);
                                     throw ex;
                                 }
 
