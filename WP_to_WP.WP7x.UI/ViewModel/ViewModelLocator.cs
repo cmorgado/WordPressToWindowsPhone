@@ -1,7 +1,7 @@
 /*
   In App.xaml:
   <Application.Resources>
-      <vm:ViewModelLocator xmlns:vm="clr-namespace:WP_to_WP.WP8.UI"
+      <vm:ViewModelLocator xmlns:vm="clr-namespace:WP_to_WP.WP7x.UI"
                            x:Key="Locator" />
   </Application.Resources>
   
@@ -16,7 +16,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
-namespace WP_to_WP.WP8.UI.ViewModel
+namespace WP_to_WP.WP7x.UI.ViewModel
 {
     /// <summary>
     /// This class contains static references to all the view models in the
